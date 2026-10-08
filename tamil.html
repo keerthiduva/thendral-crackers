@@ -130,4 +130,21 @@ window.addEventListener('load', function () {
   });
 })();
 
+
+<script>
+(function(){
+  function hideCategories(){
+    const nav=document.querySelector('.categoryNav');
+    if(nav) nav.classList.add('navCollapsed');
+  }
+  document.addEventListener('click', function(e){
+    const add=e.target.closest('.add');
+    const card=e.target.closest('.card');
+    if(add || (card && !e.target.closest('button'))){
+      hideCategories();
+    }
+  }, true);
+})();
+</script>
+
 </body></html>
